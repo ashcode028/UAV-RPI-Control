@@ -13,6 +13,25 @@
 ## Problem statement
 The goal of this project is to use P4Pi to implement sample P4 programs for UAV applications on Raspberry Pi, implement a network of drones, and share control data between the drone clients and controller drones. We want to profile the control message communication latencies under varying knobs such as the size of transmitted/received control data.
 
+## Work
+
+![](https://github.com/ashcode028/UAV-RPI-Control/blob/62317cf102dadd3f681a3a5699dc543152e1da58/images/Screenshot%20from%202022-05-15%2016-06-07.png)
+### Results
+
+|Strategy | Datapoints/sec |Throughput (Kb/sec)|
+|Single Thread tcp|366.55|5.864|
+|Single Thread udp|325.105|5.249|
+|Basic Message Queue|374.153|5.986|
+
+
+![](https://github.com/ashcode028/UAV-RPI-Control/blob/62317cf102dadd3f681a3a5699dc543152e1da58/images/Screenshot%20from%202022-05-15%2016-06-02.png)
+### Results
+|Strategy| Datapoints/sec |Throughput (Kb/sec)|
+|Single Thread tcp | 355.821|5.693|
+|Single Thread udp |325.105|5.249|
+|Basic Message Queue|365.363|5.840|
+
+
 ## References
 [1] Swiggy, anra conduct first-ever delivery trials of food, medicine with drones. 
 
