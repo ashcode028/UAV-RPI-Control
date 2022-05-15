@@ -14,11 +14,13 @@
 The goal of this project is to use P4Pi to implement sample P4 programs for UAV applications on Raspberry Pi, implement a network of drones, and share control data between the drone clients and controller drones. We want to profile the control message communication latencies under varying knobs such as the size of transmitted/received control data.
 
 ## Work
+The shown results are for ultrasonic sensor where we sent data using sockets.
 
 ![](https://github.com/ashcode028/UAV-RPI-Control/blob/62317cf102dadd3f681a3a5699dc543152e1da58/images/Screenshot%20from%202022-05-15%2016-06-07.png)
 ### Results
 
 |Strategy | Datapoints/sec |Throughput (Kb/sec)|
+|:---     |          :---: |               ---:| 
 |Single Thread tcp|366.55|5.864|
 |Single Thread udp|325.105|5.249|
 |Basic Message Queue|374.153|5.986|
@@ -27,9 +29,16 @@ The goal of this project is to use P4Pi to implement sample P4 programs for UAV 
 ![](https://github.com/ashcode028/UAV-RPI-Control/blob/62317cf102dadd3f681a3a5699dc543152e1da58/images/Screenshot%20from%202022-05-15%2016-06-02.png)
 ### Results
 |Strategy| Datapoints/sec |Throughput (Kb/sec)|
+|:---    |     :---:      |               ---:| 
 |Single Thread tcp | 355.821|5.693|
 |Single Thread udp |325.105|5.249|
 |Basic Message Queue|365.363|5.840|
+
+## Conclusions
+Network optimizations would make more sense probably for high cost, higher throughput sensors.
+This type of system could easily scale as just a small amount of bandwidth is required to stream sensor data.
+If it was camera sensor : to send gray-scale image it would ~512Kbps for one image. So similarly if we need video i.e ~40 images(per frame) then ~40Mbps for one video.
+We can use some compression techniques to compress those images after capturing, reduce the throughput for a single video transfer 
 
 
 ## References
