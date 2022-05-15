@@ -35,10 +35,13 @@ The shown results are for ultrasonic sensor where we sent data using sockets.
 |Basic Message Queue|365.363|5.840|
 
 ## Conclusions
-Network optimizations would make more sense probably for high cost, higher throughput sensors.
-This type of system could easily scale as just a small amount of bandwidth is required to stream sensor data.
-If it was camera sensor : to send gray-scale image it would ~512Kbps for one image. So similarly if we need video i.e ~40 images(per frame) then ~40Mbps for one video.
-We can use some compression techniques to compress those images after capturing, reduce the throughput for a single video transfer 
+-> Network optimizations would make more sense probably for high cost, higher throughput sensors.
+
+-> This type of system could easily scale as just a small amount of bandwidth is required to stream sensor data.
+
+-> If it was camera sensor : to send gray-scale image it would ~512Kbps for one image. So similarly if we need video i.e ~40 images(per frame) then ~40Mbps for one video.
+
+-> We can use some compression techniques to compress those images after capturing, reduce the throughput for a single video transfer 
 
 
 ## References
